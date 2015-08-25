@@ -1,0 +1,585 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E641549-27B2-4AE5-AC64-27BB96BAD459}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RobotPolish</RootNamespace>
+    <AssemblyName>RobotPolish</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>u1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataBaseManage, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataBaseManage\DataBaseManage\bin\x86\Release\DataBaseManage.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.BonusSkins.v12.1\12.1.8.0__95fc6c5621878f0a\DevExpress.BonusSkins.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.Data.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.Data.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.Printing.v12.1.Core\12.1.8.0__b88d1754d700e49a\DevExpress.Printing.v12.1.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.Utils.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.Utils.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.XtraBars.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.XtraBars.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v12.1.UI, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.XtraEditors.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.XtraEditors.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.XtraGrid.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.XtraGrid.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.XtraLayout.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.XtraLayout.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\DevExpress.XtraNavBar.v12.1\12.1.8.0__b88d1754d700e49a\DevExpress.XtraNavBar.v12.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Yanjie\备份报告\组件V2\StaubliUI\StaubliUI\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotFtpClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotFtpClient\bin\x86\Release\RobotFtpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotSecurity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotSecurity\RobotSecurity\bin\Release\RobotSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotSoapClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotSoapClient\StaubliSoapClient\bin\Release\RobotSoapClient.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotTxt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotTxt\RobotTxt\bin\Release\RobotTxt.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotVal3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotVal3\RobotVal3\bin\Release\RobotVal3.dll</HintPath>
+    </Reference>
+    <Reference Include="RobotXML, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RobotKit\RobotXML\RobotXML\bin\Release\RobotXML.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Batch_Speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Batch_Speed.Designer.cs">
+      <DependentUpon>Batch_Speed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Batch_DeleteTraj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Batch_DeleteTraj.Designer.cs">
+      <DependentUpon>Batch_DeleteTraj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Modbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Modbus.Designer.cs">
+      <DependentUpon>Edit_Modbus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_HomeTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_HomeTcp.Designer.cs">
+      <DependentUpon>Edit_HomeTcp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Ip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Ip.Designer.cs">
+      <DependentUpon>Edit_Ip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_User.Designer.cs">
+      <DependentUpon>Edit_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Gongyi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Gongyi.Designer.cs">
+      <DependentUpon>Frm_Gongyi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Infor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Infor.designer.cs">
+      <DependentUpon>Frm_Infor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PCAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PCAlarm.Designer.cs">
+      <DependentUpon>Frm_PCAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cs8cAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Cs8cAlarm.Designer.cs">
+      <DependentUpon>Frm_Cs8cAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Axis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Axis.Designer.cs">
+      <DependentUpon>Frm_Axis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Cut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Cut.Designer.cs">
+      <DependentUpon>Edit_Cut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Recipe.Designer.cs">
+      <DependentUpon>Edit_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Preset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Preset.Designer.cs">
+      <DependentUpon>Edit_Preset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Sequen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Sequen.Designer.cs">
+      <DependentUpon>Edit_Sequen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Modbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Modbus.Designer.cs">
+      <DependentUpon>Frm_Modbus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Monitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Monitor.Designer.cs">
+      <DependentUpon>Frm_Monitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Product.Designer.cs">
+      <DependentUpon>Frm_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Stat.Designer.cs">
+      <DependentUpon>Frm_Stat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DiffPreset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DiffPreset.Designer.cs">
+      <DependentUpon>Frm_DiffPreset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Sys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Sys.Designer.cs">
+      <DependentUpon>Frm_Sys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Wait.Designer.cs">
+      <DependentUpon>Frm_Wait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sel_Recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sel_Recipe.Designer.cs">
+      <DependentUpon>Sel_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Std_DataView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Std_DataView.Designer.cs">
+      <DependentUpon>Std_DataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Position.Designer.cs">
+      <DependentUpon>Frm_Position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Preset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Preset.Designer.cs">
+      <DependentUpon>Frm_Preset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Recipe.Designer.cs">
+      <DependentUpon>Frm_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_User.Designer.cs">
+      <DependentUpon>Frm_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Batch_Speed.resx">
+      <DependentUpon>Batch_Speed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Batch_DeleteTraj.resx">
+      <DependentUpon>Batch_DeleteTraj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Modbus.resx">
+      <DependentUpon>Edit_Modbus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_HomeTcp.resx">
+      <DependentUpon>Edit_HomeTcp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Cut.resx">
+      <DependentUpon>Edit_Cut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Ip.resx">
+      <DependentUpon>Edit_Ip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Preset.resx">
+      <DependentUpon>Edit_Preset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Recipe.resx">
+      <DependentUpon>Edit_Recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Sequen.resx">
+      <DependentUpon>Edit_Sequen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_User.resx">
+      <DependentUpon>Edit_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Axis.resx">
+      <DependentUpon>Frm_Axis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Cs8cAlarm.resx">
+      <DependentUpon>Frm_Cs8cAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Gongyi.resx">
+      <DependentUpon>Frm_Gongyi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Infor.resx">
+      <DependentUpon>Frm_Infor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Modbus.resx">
+      <DependentUpon>Frm_Modbus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Monitor.resx">
+      <DependentUpon>Frm_Monitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PCAlarm.resx">
+      <DependentUpon>Frm_PCAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Position.resx">
+      <DependentUpon>Frm_Position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Product.resx">
+      <DependentUpon>Frm_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Stat.resx">
+      <DependentUpon>Frm_Stat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DiffPreset.resx">
+      <DependentUpon>Frm_DiffPreset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Sys.resx">
+      <DependentUpon>Frm_Sys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_User.resx">
+      <DependentUpon>Frm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Wait.resx">
+      <DependentUpon>Frm_Wait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sel_Recipe.resx">
+      <DependentUpon>Sel_Recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Std_DataView.resx">
+      <DependentUpon>Std_DataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Preset.resx">
+      <DependentUpon>Frm_Preset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Recipe.resx">
+      <DependentUpon>Frm_Recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Std_Form.resx">
+      <DependentUpon>Std_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Batch_Cut.resx">
+      <DependentUpon>Batch_Cut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Part.resx">
+      <DependentUpon>Edit_Part.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_ToolZ.resx">
+      <DependentUpon>Edit_ToolZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_ToolLib.resx">
+      <DependentUpon>Edit_ToolLib.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PublicFunc.cs" />
+    <Compile Include="Std_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Std_Form.Designer.cs">
+      <DependentUpon>Std_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TxtData.cs" />
+    <Compile Include="Batch_Cut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Batch_Cut.Designer.cs">
+      <DependentUpon>Batch_Cut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Part.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Part.Designer.cs">
+      <DependentUpon>Edit_Part.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_ToolZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_ToolZ.Designer.cs">
+      <DependentUpon>Edit_ToolZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_ToolLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_ToolLib.Designer.cs">
+      <DependentUpon>Edit_ToolLib.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sys52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sys6.JPG">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\093650191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\093650182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\093650189.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\093650216.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LasMAN_3D.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.png" />
+    <None Include="Resources\Axis7.PNG" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23.png" />
+    <None Include="Resources\FullSizeRender.jpg" />
+    <None Include="Resources\无标题.png" />
+    <None Include="Resources\222631_12141364307991918_c478c3b92865a5c297baf8047ce7d3fc.jpg" />
+    <None Include="Resources\main1.png" />
+    <None Include="Resources\main2.png" />
+    <None Include="Resources\FullSizeRender - Copy.jpg" />
+    <None Include="Resources\FullSizeRender - Copy1.jpg" />
+    <None Include="Resources\Full.jpg" />
+    <None Include="Resources\FullSizeRender1.jpg" />
+    <Content Include="u1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+C:\Users\shumaojie\Desktop\RobotPolish\RobotPolish\RobotPolish\bin\Debug\LasMAN.exe.config
+C:\Users\shumaojie\Desktop\RobotPolish\RobotPolish\RobotPolish\obj\Debug\LasMAN.exe
+C:\Users\shumaojie\Desktop\RobotPolish\RobotPolish\RobotPolish\obj\Debug\LasMAN.pdb
